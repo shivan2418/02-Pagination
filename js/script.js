@@ -4,8 +4,6 @@
 // select all the students by getting all the children of the student list div
 const student_list = document.querySelector('.student-list').children;
 const items_per_page = 10;
-// calculate how many nav buttons are needed, use the rounded up number.
-const num_navbuttons = Math.ceil(student_list.length / items_per_page);
 
 // Create theh pagination buttons
 appendPageLinks();
@@ -53,7 +51,9 @@ function updateButtons(event) {
 
 function appendPageLinks() {
     console.log('page func');
-    let navbuttons = [];
+    // calculate how many nav buttons are needed, use the rounded up number.
+    const num_navbuttons = Math.ceil(student_list.length / items_per_page);
+
     let pagination_div = document.querySelector('.pagination');
 
     //  iteate and create buttons as needed. 
